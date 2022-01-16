@@ -1,4 +1,4 @@
-<h1> {{ title }} </h1>
+<h1> {{ title }} {{ todayDate | date:"MM/dd/yy" }}</h1>
 <hr />
 <!-- <p> {{ videoList }} </p>
 <p *ngFor='let item of videoList'>
@@ -11,6 +11,7 @@
        
         <div [innerHTML]='item.embed'></div>
         <div [innerHTML]='"<h1>Hi there!!</h1>"'></div>
+
         {{ item.embed }}
 
         <div style="position: relative; height: 0; padding-bottom: 56%;" *ngIf='item.embed'>
