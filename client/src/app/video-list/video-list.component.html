@@ -1,13 +1,13 @@
 <h1> {{ title }} </h1>
 <hr />
-<p> {{ videoList }} </p>
+<!-- <p> {{ videoList }} </p>
 <p *ngFor='let item of videoList'>
     {{ item }}
-    </p>
+    </p> -->
 <!-- loop -->
     <p *ngFor='let item of videoList'>
-        <a href='{{ item.slug }}' *ngIf='item.slug == "item-1"'>{{ item.name }}</a>
-        <a href='{{ item.slug }}' *ngIf='item.slug != "item-1"' style='color:red;'>{{ item.name }}</a>   
+        <a href='videos/{{ item.slug }}' *ngIf='item.slug == "item-1"'>{{ item.name }}</a>
+        <a href='videos/{{ item.slug }}' *ngIf='item.slug != "item-1"' style='color:red;'>{{ item.name }}</a>   
     </p>
 
 <p>video-list works!</p>
