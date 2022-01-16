@@ -3,3 +3,14 @@
       <!-- selector -->
       <app-video-list></app-video-list>
       <app-video-detail></app-video-detail>
+
+
+
+
+      <nav>
+        <ul>
+          <li><a routerLink="/videos" routerLinkActive="active">First Component</a></li>
+          <li><a routerLink="/videos:slug" routerLinkActive="active">Second Component</a></li>
+        </ul>
+      </nav>
+      <router-outlet></router-outlet>
