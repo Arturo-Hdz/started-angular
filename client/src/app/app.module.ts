@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './app.routing';
 
+// third party imports
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 import { AppComponent } from './app.component';
 import { VideoListComponent } from './video-list/video-list.component';
 import { VideoDetailComponent } from './video-detail/video-detail.component';
@@ -20,6 +24,8 @@ import { SafePipe } from './utility/safe.pipe';
     SafePipe
   ],
   imports: [
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(
