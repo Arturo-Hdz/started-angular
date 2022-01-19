@@ -27,13 +27,13 @@ export class VideoListComponent implements OnInit {
       embed: null,
     },
   ]
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.todayDate = new Date()
   }
   getEmbedUrl(item: { embed: string; }){
-    return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+ item.embed +'')
+    return 'https://www.youtube.com/embed/'+ item.embed +''
   }
 
 }
