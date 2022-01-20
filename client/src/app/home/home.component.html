@@ -6,28 +6,43 @@
     <div class="row">
 <div class="col-sm-12">
 <carousel class="text-center">
-    <slide>
+    <slide *ngFor='let imageObj of homeImageList'>
+      <a class="" href="/videos/video-1" (click)='preventNormal($event, imageObj)'>
+        <img class="img-main-carousel" [src]="imageObj.image" alt="first slide" style="display: block; width: 100%;">
+      </a>
+        <div class="carousel-caption d-none d-md-block">
+          <h3>{{ imageObj.title }}</h3>
+          <p><a class="btn btn-default" href="{{ imageObj.link }}">Video 1</a></p>
+        </div>
+    </slide>
+<!-- 
+      <a class="" #imageOne  href="/videos/video-1" (click)='preventNormal($event, imageOne)'>
         <img class="img-main-carousel" src="assets/images/nature/1.jpg" alt="first slide" style="display: block; width: 100%;">
+      </a>
         <div class="carousel-caption d-none d-md-block">
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          <p><a class="btn btn-default" href="/videos/video-1">Video 1</a></p>
+          <p><a class="btn btn-default" #imageOne  href="/videos/video-1" (click)='preventNormal($event, imageOne)'>Video 1</a></p>
         </div>
       </slide>
     <slide>
+      <a class="" #imageTwo href="/videos/video-1" (click)='preventNormal($event, imageTwo)'>
+      </a>
         <img class="img-main-carousel" src="assets/images/nature/2.jpg" alt="first slide" style="display: block; width: 100%;">
         <div class="carousel-caption d-none d-md-block">
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          <p><a class="btn btn-default" href="/videos/video-1">Video 1</a></p>
+          <p><a class="btn btn-default" #imageTwo href="/videos/video-1" (click)='preventNormal($event, imageTwo)'>Video 1</a></p>
         </div>
       </slide>
     <slide>
+      <a class="btn btn-default" #imageThree href="/videos/video-1" (click)='preventNormal($event, imageThree)'>
         <img class="img-main-carousel" src="assets/images/nature/3.jpg" alt="first slide" style="display: block; width: 100%;">
+        </a>
         <div class="carousel-caption d-none d-md-block">
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          <p><a class="btn btn-default" href="/videos/video-1">Video 1</a></p>
+          <p><a class="btn btn-default" #imageThree href="/videos/video-1" (click)='preventNormal($event, imageThree)'>Video 1</a></p>
         </div>
       </slide>
     <slide>
@@ -50,7 +65,7 @@
         <h3>Third slide label</h3>
         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
       </div>
-    </slide>
+    </slide> -->
   </carousel>
   </div>
   </div>
