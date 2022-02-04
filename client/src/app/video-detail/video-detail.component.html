@@ -1,2 +1,7 @@
- <p>video-detail works!</p>
+<div *ngIf='!video'>Loading</div>
+<div *ngIf='video'>
+<p>video-detail works!</p>
 <p>{{ slug }}!!!!!</p>
+<h1>{{ video.name }}</h1>
+<h1>{{ video?.name }}</h1>
+</div>

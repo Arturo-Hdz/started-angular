@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './app.routing';
@@ -32,6 +33,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     BsDropdownModule.forRoot(),
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes
   ),

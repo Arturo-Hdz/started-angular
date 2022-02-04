@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-video-list',
   templateUrl: './video-list.component.html',
   styleUrls: ['./video-list.component.css']
 })
-export class VideoListComponent implements OnInit {
+export class VideoListComponent implements OnInit, OnDestroy{
+  private req: any;
   title = "Video List";
   title2 = "<h1>Hi there!!</h1>"
   todayDate!: Date;
@@ -18,9 +20,10 @@ export class VideoListComponent implements OnInit {
   videoUrl!: SafeResourceUrl;
 
   // videoList = ["item 1", "item 2", "item 3"]
+
   videoList = [
     {
-      name: "item 1",
+      name: "Welcome",
       slug: "item-1",
       embed: `MM7v61MvHco`
     },
@@ -38,7 +41,9 @@ export class VideoListComponent implements OnInit {
 
 
   // Angular Security
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer,
+    private http:HttpClient) {
+
     // javascript: URLs are dangerous if attacker controlled.
     // Angular sanitizes them in data binding, but you can
     // explicitly tell Angular to trust this value:
@@ -61,7 +66,17 @@ export class VideoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.todayDate = new Date()
+    this.req = this.http.get("assets/json/videos.json").subscribe(data=>{
+      console.log(data)
+      // this.req = data;
+      this.videoList = data as [any];
+    })
   }
+
+  ngOnDestroy(): void {
+    this.req.unsuscribe()
+  }
+
   getEmbedUrl(item: { embed: string; }){
     // return 'https://www.youtube.com/embed/'+ item.embed +''
     return 'https://www.youtube.com/embed/'+ item.embed +''
