@@ -1,4 +1,4 @@
-<search class='search-inline' *ngIf='!query'></search>
+<search class='search-inline' [passedQuery]='query'></search>
 
 <p *ngIf='query'>
 Searched for <b>{{ query}}</b>
