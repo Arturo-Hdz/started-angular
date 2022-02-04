@@ -5,7 +5,19 @@
   <div class="container">
     <div class="row">
 <div class="col-sm-12">
+
+  <carousel class="text-center">
+
+    <slide *ngFor='let imageObj2 of homeImageList2'>
+      <h3>{{ imageObj2.name }}</h3>
+      <img class="img-main-carousel" [src]="imageObj2.image" alt="first slide" style="display: block; width: 100%;">
+      <p><a class="btn btn-default" href="{{ imageObj2.slug }}">View</a></p>
+      {{ imageObj2.image }}
+    </slide>
+  </carousel>
+
 <carousel class="text-center">
+
     <slide *ngFor='let imageObj of homeImageList'>
       <a class="" href="/videos/video-1" (click)='preventNormal($event, imageObj)'>
         <img class="img-main-carousel" [src]="imageObj.image" alt="first slide" style="display: block; width: 100%;">

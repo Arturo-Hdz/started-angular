@@ -16,16 +16,10 @@
 
         <div style="position: relative; height: 0; padding-bottom: 56%;" *ngIf='item.embed'>
             <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VtHrTX_nTto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-            <!-- <iframe [src]="getEmbedUrl(item)" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
             <iframe [src]="getEmbedUrl(item)" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       
         </div>
 
     </div>
 
 <p>video-list works!</p>
-
-
-<h4>Resource URL:</h4>
-<p>Showing: {{dangerousVideoUrl}}</p>
-<p>Trusted:</p>
-<iframe class="e2e-iframe-trusted-src" width="640" height="390" [src]="videoUrl"></iframe>
