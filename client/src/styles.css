@@ -12,3 +12,6 @@
 .carousel-control.left{
     cursor: pointer;
 }
+.search-inline {
+    float: none !important;
+}

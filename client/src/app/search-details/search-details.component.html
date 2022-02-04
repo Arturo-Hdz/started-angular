@@ -1,0 +1,9 @@
+<search class='search-inline' *ngIf='!query'></search>
+
+<p *ngIf='query'>
+Searched for <b>{{ query}}</b>
+</p>
+<div class="text-center" *ngIf='!query'>
+    <h1>Search Somenthing</h1>
+</div>
+

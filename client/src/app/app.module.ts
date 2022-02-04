@@ -18,6 +18,7 @@ import { SafePipe } from './utility/safe.pipe';
 import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { SearchComponent } from './search/search.component';
+import { SearchDetailsComponent } from './search-details/search-details.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { SearchComponent } from './search/search.component';
     VideoDetailComponent,
     SafePipe,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    SearchDetailsComponent
   ],
   imports: [
     CarouselModule.forRoot(),

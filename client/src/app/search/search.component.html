@@ -1,8 +1,7 @@
-<form #searchForm='ngForm' class="d-flex" (ngSubmit)='submitSearch($event, 
-searchForm)'>
+<form #searchForm='ngForm' class="d-flex" (ngSubmit)='submitSearch($event, searchForm)'>
 
 <input type='hidden' name='location' [(ngModel)]='searchLocation' />
-<input class="form-control me-2" type="search" placeholder="Search" name='searchQuery' 
+<input class="form-control me-2" type="text" placeholder="Search" name='q' 
     [(ngModel)]='searchQuery' (change)='searchQueryChange()' aria-label="Search">
     <!-- [(ngModel)]='searchQuery'  -->
 
