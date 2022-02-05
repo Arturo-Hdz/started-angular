@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { VideoService } from '../videos/videos.service';
+import { VideoItem } from '../videos/video';
 
 @Component({
   selector: 'app-video-detail',
@@ -11,13 +12,13 @@ import { VideoService } from '../videos/videos.service';
 })
 export class VideoDetailComponent implements OnInit, OnDestroy{
   private routeSub:any;
-  private req:any;
-  video = {
-      name: "Default",
-      slug: "item5",
-      embed: "nefbehbjhberfhbejh"
-  }
-  // video: any;
+  private req:any; 
+  // video = {
+  //     name: "Default",
+  //     slug: "item5",
+  //     embed: "nefbehbjhberfhbejh"
+  // }
+  video: VideoItem | undefined;;
   slug:string | undefined;
 
   constructor(private route: ActivatedRoute,
@@ -31,7 +32,7 @@ export class VideoDetailComponent implements OnInit, OnDestroy{
       // this.http.get('assets/json/videos.json').subscribe(data=>{
       // this.req = this._video.list().subscribe(data=>{
         this.req = this._video.get(this.slug).subscribe(data=>{
-          // this._video = data;
+          this.video = data as VideoItem;
       // ((item: any)=>{
       //     console.log(item)
       //     if (item.slug == this.slug){

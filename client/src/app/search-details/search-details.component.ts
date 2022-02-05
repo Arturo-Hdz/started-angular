@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VideoService } from '../videos/videos.service';
+import { VideoItem } from '../videos/video';
 
 @Component({
   selector: 'app-search-details',
@@ -12,7 +13,7 @@ export class SearchDetailsComponent implements OnInit, OnDestroy {
   private routeSub:any;
   query: string | undefined; 
   private req: any;
-  videoList: [any] | undefined;
+  videoList: [VideoItem] | undefined;
 
   constructor(private  route: ActivatedRoute,
     private _video: VideoService) { }
@@ -22,7 +23,7 @@ export class SearchDetailsComponent implements OnInit, OnDestroy {
       console.log(params)
       this.query = params['q']
       this.req = this._video.search(this.query).subscribe(data=>{
-        this.videoList = data as [any];
+        this.videoList = data as [VideoItem];
       })
     })
   }
