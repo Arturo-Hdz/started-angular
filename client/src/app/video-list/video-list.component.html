@@ -6,9 +6,11 @@
     </p> -->
 <!-- loop -->
     <div *ngFor='let item of videoList'>
+        <h1>
         <a href='videos/{{ item.slug }}' *ngIf='item.slug == "item-1"'>{{ item.name }}</a>
         <a href='videos/{{ item.slug }}' *ngIf='item.slug != "item-1"' style='color:red;'>{{ item.name }}</a>   
-       
+    </h1>
+    <hr/>
         <div [innerHTML]='item.embed'></div>
         <div [innerHTML]='"<h1>Hi there!!</h1>"'></div>
 
