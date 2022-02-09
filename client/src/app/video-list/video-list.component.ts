@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 // import { HttpClient } from '@angular/common/http';
 import { VideoService } from '../videos/videos.service';
+import { VideoItem } from '../videos/video';
 
 @Component({
   selector: 'app-video-list',
@@ -22,23 +23,23 @@ export class VideoListComponent implements OnInit, OnDestroy{
   videoUrl!: SafeResourceUrl;
 
   // videoList = ["item 1", "item 2", "item 3"]
-// videoList = [];
-  videoList = [
-    {
-      name: "Welcome",
-      slug: "item-1",
-      embed: `MM7v61MvHco`
-    },
-    {
-      name: "item 2",
-      slug: "item-2",
-      embed: `MM7v61MvHco`
-    },{
-      name: "item 3",
-      slug: "item-3",
-      embed: null,
-    },
-  ]
+videoList = [VideoItem];
+  // videoList = [
+  //   {
+  //     name: "Welcome",
+  //     slug: "item-1",
+  //     embed: `MM7v61MvHco`
+  //   },
+  //   {
+  //     name: "item 2",
+  //     slug: "item-2",
+  //     embed: `MM7v61MvHco`
+  //   },{
+  //     name: "item 3",
+  //     slug: "item-3",
+  //     embed: null,
+  //   },
+  // ]
   // constructor() {}
 
 
