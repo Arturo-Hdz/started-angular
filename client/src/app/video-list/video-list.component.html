@@ -5,22 +5,36 @@
     {{ item }}
     </p> -->
 <!-- loop -->
-    <div *ngFor='let item of videoList'>
-        <h1>
-        <a href='videos/{{ item.slug }}' *ngIf='item.slug == "item-1"'>{{ item.name }}</a>
-        <a href='videos/{{ item.slug }}' *ngIf='item.slug != "item-1"' style='color:red;'>{{ item.name }}</a>   
-    </h1>
+    <div class="row">
+    <div class="col-sm-3" *ngFor='let item of videoList'>
+    <div class="thumbnail">
+        <!-- <a href='videos/{{ item.slug }}' *ngIf='item.slug == "item-1"'>{{ item.name }}</a> -->
+        <a href='videos/{{ item.slug }}' *ngIf='item.image'><img [src]="item.image" alt="{{item.name}} image"></a>
+    
+        <div class="caption">
+                <!-- <img [src]="item.image" alt="{{item.name}} image">     -->
+                <h3>
+                <a href='videos/{{ item.slug }}' *ngIf='item.slug != "item-1"' style='color:red;'>{{ item.name }}</a>   
+                </h3>
+            <p><a href="videos/{{ item.slug }}" class="btn btn-primary" role="button">Button</a>
+            </p>
+        </div>
+        <div style="position: relative; height: 0; padding-bottom: 56%;" *ngIf='item.embed'>
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VtHrTX_nTto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <iframe [src]="getEmbedUrl(item) | safe" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- <div *ngIf='item.image && item.embed'><img class="img-responsive" [src]='item.image' -->
+            <div *ngIf='item.image'><img class="img-responsive img-center" [src]='item.image'
+                alt="{{ item.name }} image" /></div>
+        </div>
+    
+    </div>
+    </div>
+    <!--     
     <hr/>
         <div [innerHTML]='item.embed'></div>
         <div [innerHTML]='"<h1>Hi there!!</h1>"'></div>
 
-        {{ item.embed }}
-
-        <div style="position: relative; height: 0; padding-bottom: 56%;" *ngIf='item.embed'>
-            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VtHrTX_nTto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-            <iframe [src]="getEmbedUrl(item)" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       
-        </div>
+        {{ item.embed }} -->
 
     </div>
 

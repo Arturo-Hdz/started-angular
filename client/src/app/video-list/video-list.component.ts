@@ -25,20 +25,40 @@ export class VideoListComponent implements OnInit, OnDestroy{
   // videoList = ["item 1", "item 2", "item 3"]
 // videoList2 = [VideoItem];
   videoList = [
+    // {
+    //   name: "Welcome",
+    //   slug: "item-1",
+    //   embed: `MM7v61MvHco`
+    // },
+    // {
+    //   name: "item 2",
+    //   slug: "item-2",
+    //   embed: `MM7v61MvHco`
+    // },{
+    //   name: "item 3",
+    //   slug: "item-3",
+    //   embed: null,
+    // },
     {
-      name: "Welcome",
-      slug: "item-1",
-      embed: `MM7v61MvHco`
+      "name": "welcome2",
+      "slug": "item-1",
+      "embed": "MM7v61MvHco",
+      "image": "assets/images/nature/4.jpg",
+      "featured": true
     },
     {
-      name: "item 2",
-      slug: "item-2",
-      embed: `MM7v61MvHco`
-    },{
-      name: "item 3",
-      slug: "item-3",
-      embed: null,
-    },
+        "name": "item 2",
+        "slug": "item-2",
+        "embed": "MM7v61MvHco",
+        "image": "assets/images/nature/5.jpg",
+        "featured": true
+      },
+      {
+        "name": "item 3",
+        "slug": "item-3",
+        "embed": "null",
+        "image": "assets/images/nature/6.jpg"
+      }
   ]
   // constructor() {}
 

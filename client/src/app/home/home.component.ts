@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     {image: "assets/images/nature/5.jpg", name:"image 5", slug:'/videos/video-2'},
     {image: "assets/images/nature/6.jpg", name:"image 6", slug:'/videos/video-3'},
   ]
+  videoListDefaultImage = "assets/videos/1.jpg";
+
   // homeImageList2: [VideoItem] = [] as unknown as [VideoItem]
   constructor(private router:Router,
               private http:HttpClient,

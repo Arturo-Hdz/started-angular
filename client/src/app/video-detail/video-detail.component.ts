@@ -51,4 +51,6 @@ export class VideoDetailComponent implements OnInit, OnDestroy{
     this.req.unsubscribe()
   }
 
+  
+
 }

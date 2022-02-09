@@ -8,10 +8,15 @@
 
   <carousel class="text-center">
 
+    <slide>
+      <img class="img-main-carousel" [src]="videoListDefaultImage" alt="first slide" style="display: block; width: 100%;">
+      <p><a class="btn btn-primary" routerLink="videos/" routerLinkActive="active">View Videos</a></p>
+    </slide>
+
     <slide *ngFor='let imageObj2 of homeImageList2'>
       <h3>{{ imageObj2.name }}</h3>
       <img class="img-main-carousel" [src]="imageObj2.image" alt="first slide" style="display: block; width: 100%;">
-      <p><a class="btn btn-default" routerLink="{{ imageObj2.slug }}" routerLinkActive="active">View1</a></p>
+      <p><a class="btn btn-primary" routerLink="{{ imageObj2.slug }}" routerLinkActive="active">View1</a></p>
       {{ imageObj2.image }}
     </slide>
   </carousel>
