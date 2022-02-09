@@ -23,23 +23,23 @@ export class VideoListComponent implements OnInit, OnDestroy{
   videoUrl!: SafeResourceUrl;
 
   // videoList = ["item 1", "item 2", "item 3"]
-videoList = [VideoItem];
-  // videoList = [
-  //   {
-  //     name: "Welcome",
-  //     slug: "item-1",
-  //     embed: `MM7v61MvHco`
-  //   },
-  //   {
-  //     name: "item 2",
-  //     slug: "item-2",
-  //     embed: `MM7v61MvHco`
-  //   },{
-  //     name: "item 3",
-  //     slug: "item-3",
-  //     embed: null,
-  //   },
-  // ]
+// videoList2 = [VideoItem];
+  videoList = [
+    {
+      name: "Welcome",
+      slug: "item-1",
+      embed: `MM7v61MvHco`
+    },
+    {
+      name: "item 2",
+      slug: "item-2",
+      embed: `MM7v61MvHco`
+    },{
+      name: "item 3",
+      slug: "item-3",
+      embed: null,
+    },
+  ]
   // constructor() {}
 
 
