@@ -60,7 +60,6 @@ export class VideoListComponent implements OnInit, OnDestroy{
         "image": "assets/images/nature/6.jpg"
       }
   ]
-  // constructor() {}
 
 
   // Angular Security

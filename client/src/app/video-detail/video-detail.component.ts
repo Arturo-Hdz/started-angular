@@ -32,7 +32,7 @@ export class VideoDetailComponent implements OnInit, OnDestroy{
       // this.http.get('assets/json/videos.json').subscribe(data=>{
       // this.req = this._video.list().subscribe(data=>{
         this.req = this._video.get(this.slug).subscribe(data=>{
-          this.video = data as VideoItem;
+          this.video = data as VideoItem
       // ((item: any)=>{
       //     console.log(item)
       //     if (item.slug == this.slug){
@@ -46,11 +46,13 @@ export class VideoDetailComponent implements OnInit, OnDestroy{
     //   console.log(params)
     // })
   }
+
+ 
+
+
   ngOnDestroy(): void {
     this.routeSub.unsubscribe() 
     this.req.unsubscribe()
   }
-
-  
 
 }
